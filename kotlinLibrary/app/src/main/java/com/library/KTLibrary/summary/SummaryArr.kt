@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.graphics.Matrix
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -282,9 +283,9 @@ class SummaryArr : Fragment() {
             try {
                 // file read
                 val br = BufferedReader(FileReader(file))
-                var line: String
+                var line: String ?
                 while (br.readLine().also { line = it } != null) {
-                    val columns = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                    val columns = line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                         .toTypedArray() // 데이터 구분
                     val arrDataRow = columns[6].toDouble() // arr data
                     val myArrTimeRow = columns[0]
@@ -385,9 +386,9 @@ class SummaryArr : Fragment() {
                 try {
                     // file read
                     val br = BufferedReader(FileReader(file))
-                    var line: String
+                    var line: String ?
                     while (br.readLine().also { line = it } != null) {
-                        val columns = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                        val columns = line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                             .toTypedArray() // 데이터 구분
                         val arrDataRow = columns[6].toDouble() // arr data
                         val myArrTimeRow = columns[0]
@@ -578,10 +579,10 @@ class SummaryArr : Fragment() {
     @Throws(IOException::class)
     fun setCalTimeLoop(file: File?) {
         val br = BufferedReader(FileReader(file))
-        var line: String
+        var line: String ?
         while (br.readLine().also { line = it } != null) {
             val columns =
-                line.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
+                line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
             monthArrCnt += columns[6].toInt()
         }
         br.close()

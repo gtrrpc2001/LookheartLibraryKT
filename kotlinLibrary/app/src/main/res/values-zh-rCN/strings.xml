@@ -221,4 +221,7 @@
     <string name="distanceValue3">0 公里</string>
     <string name="distanceM2">米</string>
     <string name="summaryBpm_low">心率</string>
+    <string name="emergencyType">紧急状况 :</string>
+    <string name="noArrData">没有数据</string>
+    <string name="serverError">无法从服务器获取数据</string>
 </resources>

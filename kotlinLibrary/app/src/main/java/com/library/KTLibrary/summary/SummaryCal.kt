@@ -308,9 +308,9 @@ class SummaryCal : Fragment() {
             try {
                 // file read
                 val br = BufferedReader(FileReader(file))
-                var line: String
+                var line: String ?
                 while (br.readLine().also { line = it } != null) {
-                    val columns = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                    val columns = line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                         .toTypedArray() // 데이터 구분
                     val tCal = columns[4].toDouble()
                     val eCal = columns[5].toDouble()
@@ -466,9 +466,9 @@ class SummaryCal : Fragment() {
                 try {
                     // file read
                     val br = BufferedReader(FileReader(file))
-                    var line: String
+                    var line: String ?
                     while (br.readLine().also { line = it } != null) {
-                        val columns = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                        val columns = line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                             .toTypedArray() // 데이터 구분
                         val tCal = columns[4].toDouble()
                         val eCal = columns[5].toDouble()
@@ -595,9 +595,9 @@ class SummaryCal : Fragment() {
                     try {
                         // file read
                         val br = BufferedReader(FileReader(file))
-                        var line: String
+                        var line: String ?
                         while (br.readLine().also { line = it } != null) {
-                            val columns = line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                            val columns = line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                                 .toTypedArray() // 데이터 구분
                             val tCal = columns[4].toDouble()
                             val eCal = columns[5].toDouble()
@@ -751,10 +751,10 @@ class SummaryCal : Fragment() {
                         try {
                             // file read
                             val br = BufferedReader(FileReader(file))
-                            var line: String
+                            var line: String ?
                             while (br.readLine().also { line = it } != null) {
                                 val columns =
-                                    line.split(",".toRegex()).dropLastWhile { it.isEmpty() }
+                                    line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }
                                         .toTypedArray() // 데이터 구분
                                 val tCal = columns[4].toDouble()
                                 val eCal = columns[5].toDouble()

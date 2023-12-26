@@ -4,6 +4,7 @@ import android.content.Context
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -541,19 +542,20 @@ class SummaryBpm : Fragment() {
     @Throws(IOException::class)
     fun setBpmLoop(file: File?, bpmTimeData: ArrayList<String>, bpmArrayData: ArrayList<Double>) {
         val br = BufferedReader(FileReader(file))
-        var line: String
+        var line: String ?
         while (br.readLine().also { line = it } != null) {
-            val columns =
-                line.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
-            val bpmDataRow = columns[2].toDouble() // bpm data
-            val bpm = columns[2].toInt() // minMaxAvg 찾는 변수
+            val columns = line!!.split(",").toTypedArray()
+//                line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
+            val bpmDataRow = columns[2] // bpm data
+            val bpm = columns[2] // minMaxAvg 찾는 변수
             val bpmTimeCheck = columns[0].split(":".toRegex()).dropLastWhile { it.isEmpty() }
                 .toTypedArray() // 시간 구분
             val myBpmTimeRow = bpmTimeCheck[0] + ":" + bpmTimeCheck[1] + ":" + bpmTimeCheck[2]
-            calcMinMax(bpm)
+            Log.e("bpm",bpm)
+            calcMinMax(bpm.toInt())
             // 데이터 저장
             bpmTimeData.add(myBpmTimeRow)
-            bpmArrayData.add(bpmDataRow)
+            bpmArrayData.add(bpmDataRow.toDouble())
         }
         br.close()
     }

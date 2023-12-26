@@ -27,10 +27,25 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="9">
-                    <com.github.mikephil.charting.charts.LineChart
-                        android:id="@+id/fragment_arrChart"
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
+                        android:layout_height="match_parent">
+
+                        <ProgressBar
+                            android:id="@+id/progressBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:indeterminateTint="@color/myBlue"/>
+
+                        <com.github.mikephil.charting.charts.LineChart
+                            android:id="@+id/fragment_arrChart"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+
+                    </RelativeLayout>
+
                 </LinearLayout>
 
                 <LinearLayout
@@ -185,14 +200,6 @@
                             android:orientation="vertical">
                         </LinearLayout>
 
-<!--                        <LinearLayout-->
-<!--                            android:id="@+id/arrDeleteButton"-->
-<!--                            android:layout_width="0dp"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:layout_weight="2"-->
-<!--                            android:orientation="vertical">-->
-
-<!--                        </LinearLayout>-->
                     </LinearLayout>
 
                 </ScrollView>

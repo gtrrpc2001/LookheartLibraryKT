@@ -533,10 +533,10 @@ class SummaryHRV : Fragment() {
     @Throws(IOException::class)
     fun setHrvLoop(file: File?, timeData: ArrayList<String>, arrayData: ArrayList<Double>) {
         val br = BufferedReader(FileReader(file))
-        var line: String
+        var line: String ?
         while (br.readLine().also { line = it } != null) {
             val columns =
-                line.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
+                line!!.split(",".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray() // 데이터 구분
             val hrvDataRow = columns[4].toDouble() // hrv data
             val hrv = columns[4].toInt() // minMaxAvg 찾는 변수
             val hrvTimeCheck = columns[0].split(":".toRegex()).dropLastWhile { it.isEmpty() }

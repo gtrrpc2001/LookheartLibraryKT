@@ -1,7 +1,10 @@
 package com.library.KTLibrary.controller
 
 class PeakController {
-    private var xx_ecg_outdata = FloatArray(9)
+
+    val ecgToPeakDataFlag = true
+
+    private var xx_ecg_outdata = FloatArray(5)
     private var xx_msl_mm = 0f
     private var xx_outdata_itw = 0f
     private var xx_outdata_S_M = 0f
@@ -34,22 +37,18 @@ class PeakController {
     constructor()
 
     fun getPeackData(ecg: Int): Double {
-        xx_ecg_outdata[8] = xx_ecg_outdata[7]
-        xx_ecg_outdata[7] = xx_ecg_outdata[6]
-        xx_ecg_outdata[6] = xx_ecg_outdata[5]
-        xx_ecg_outdata[5] = xx_ecg_outdata[4]
         xx_ecg_outdata[4] = xx_ecg_outdata[3]
         xx_ecg_outdata[3] = xx_ecg_outdata[2]
         xx_ecg_outdata[2] = xx_ecg_outdata[1]
         xx_ecg_outdata[1] = xx_ecg_outdata[0]
         xx_ecg_outdata[0] = ecg.toFloat()
-        xx_msl_mm = Math.abs(xx_ecg_outdata[0] - xx_ecg_outdata[8])
+        xx_msl_mm = Math.abs(xx_ecg_outdata[0] - xx_ecg_outdata[4])
         xx_msl_pp = xx_maxsmin(xx_msl_mm)
-        xx_outdata_itw = xx_iten(xx_msl_pp) / 10
+        xx_outdata_itw = xx_iten(xx_msl_pp) / 5
         xx_outdata_S_M = xx_sum_max(xx_outdata_itw)
         xx_outdata_M_M = xx_max_min(xx_outdata_S_M)
         xx_finaloper = xx_outdata_S_M - xx_outdata_M_M
-        xx_real_finaloper = (xx_iten_1(xx_finaloper) / 6)
+        xx_real_finaloper = (xx_iten_1(xx_finaloper) / 10)
         if (xx_real_finaloper >= 1024) xx_real_finaloper = 1024
         return xx_real_finaloper.toDouble()
     }

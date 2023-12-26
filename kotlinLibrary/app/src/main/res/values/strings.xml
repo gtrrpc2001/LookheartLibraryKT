@@ -166,6 +166,9 @@
     <string name="typeSlowArr">Slow heart rhythm</string>
     <string name="typeHeavyArr">Heavy I.H.R.</string>
 
+    <string name="noArrData">No data available</string>
+    <string name="serverError">Failed to retrieve data from the server</string>
+
     <!--    ProfileFragment    -->
     <string name="logout">LOGOUT</string>
     <string name="logoutHelp">Do you want to log out?</string>
@@ -296,6 +299,7 @@
     <string name="bottomSummary">Summary</string>
     <string name="bottomArr">IHR</string>
     <string name="bottomProfile">Profile</string>
+    <string name="emergencyType">"Emergency: "</string>
 
 
 </resources>

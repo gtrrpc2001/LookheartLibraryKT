@@ -195,6 +195,7 @@
     <string name="ok">확인</string>
     <string name="exit2">종료</string>
     <string name="emergency">응급 상황</string>
+    <string name="emergencyType">응급 상황: </string>
     <string name="emergencyTxt">아래 버튼을 누르지 않으면\n보호자에게 알림이 전송됩니다.</string>
     <string name="sendEmergencyAlert">알림 전송 완료</string>
     <string name="noGuardianSet">설정된 보호자가 없습니다.</string>
@@ -221,4 +222,6 @@
     <string name="distanceValue3">0 km</string>
     <string name="distanceM2">m</string>
     <string name="summaryBpm_low">bpm</string>
+    <string name="noArrData">데이터가 없습니다</string>
+    <string name="serverError">서버에서 데이터를 받아오지 못했습니다</string>
 </resources>
