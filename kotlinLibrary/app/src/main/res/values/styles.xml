@@ -3,8 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-
     </style>
+
+    <style name="ShapeAppearanceOverlay"/>
 
     <style name="MyTheme.NoTitleBar.SplashWindow" parent="android:Theme">
         <item name="android:windowBackground">@drawable/launch</item>

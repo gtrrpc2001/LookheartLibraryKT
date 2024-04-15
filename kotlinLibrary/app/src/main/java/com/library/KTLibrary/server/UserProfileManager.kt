@@ -1,22 +1,30 @@
 package com.library.KTLibrary.server
 
-class UserProfileManager {
-    private var instance: UserProfileManager? = null
+object UserProfileManager {
 
     private var userProfile: UserProfile? = null
+    private var bleIdentifier: String? = null
+    private var guardianPhoneNumbers: MutableList<String> = mutableListOf()
 
-    fun getInstance(): UserProfileManager? {
-        if (instance == null) {
-            instance = UserProfileManager()
+    var deviceName: String?
+        get() = bleIdentifier
+        set(value) {
+            bleIdentifier = value
         }
-        return instance
-    }
 
     fun getUserProfile(): UserProfile? {
         return userProfile
     }
 
-    fun setUserProfile(myUserProfile: UserProfile?) {
-        userProfile = myUserProfile
+    fun setUserProfile(userProfile: UserProfile?) {
+        this.userProfile = userProfile
+    }
+
+    fun addGuardian(phoneNumber: String) {
+        guardianPhoneNumbers.add(phoneNumber)
+    }
+
+    fun getGuardian(): MutableList<String> {
+        return guardianPhoneNumbers
     }
 }

@@ -83,7 +83,7 @@
     <string name="eCal">Activity calories</string>
     <string name="homeECal">Activity cal</string>
     <string name="eCalValue">0 kcal</string>
-    <string name="eCalValue2">kcal</string>
+    <string name="kcal_unit">kcal</string>
 
     <string name="step">Steps</string>
     <string name="stepValue">0 step</string>
@@ -96,7 +96,7 @@
     <string name="distance">Distance</string>
     <string name="distanceM">Distance (m)</string>
     <string name="distanceValue">0.000 km</string>
-    <string name="distanceValue2">km</string>
+    <string name="distance_unit">km</string>
     <string name="distanceValue3">0 km</string>
     <string name="distanceM2">m</string>
 
@@ -300,6 +300,22 @@
     <string name="bottomArr">IHR</string>
     <string name="bottomProfile">Profile</string>
     <string name="emergencyType">"Emergency: "</string>
-
-
+    <string name="identityVerification">Identity Verification</string>
+    <string name="helpAuthText">Please complete identity verification\nto use the service.</string>
+    <string name="threeMinutesHelpText">◦ Enter the code within 3 minutes.</string>
+    <string name="resendAuthNumber">◦ No code? Press resend.</string>
+    <string name="certNo">Verify</string>
+    <string name="cancel">CANCEL</string>
+    <string name="verifyNumber">Verify Number :</string>
+    <string name="reSend">Resend</string>
+    <string name="authHelpText">Please enter the 6-digit verification code.</string>
+    <string name="dupPhoneNumber">The ID already exists for this number.</string>
+    <string name="plus_value">+%1$d</string>
+    <string name="minus_value">-%1$d</string>
+    <string name="travel_distance">Travel Distance</string>
+    <string name="value_unit">%1$d %2$s</string>
+    <string name="day_day">%1$s %2$s</string>
+    <string name="string_percent">%1$d%%</string>
+    <string name="reSendHelpText">Would you like to modify the number?</string>
+    <string name="country_code">%1$s(%2$d)</string>
 </resources>
